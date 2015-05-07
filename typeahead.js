@@ -28,7 +28,7 @@ var Typeahead = function (element, options) {
     self.menu = dom(self.options.menu);
     self.parent = dom(self.options.parent);
 
-    parent.append(self.menu);
+    self.parent.append(self.menu);
 
     self.source = self.options.source;
     self.shown = false;
