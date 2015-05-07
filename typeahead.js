@@ -8,7 +8,8 @@ var defaults = {
     menu: '<ul class="typeahead hidden"></ul>',
     item: '<li><a href="#"></a></li>',
     minLength: 1,
-    autoselect: true
+    autoselect: true,
+    parent: document.body
 }
 
 var Typeahead = function (element, options) {
@@ -25,7 +26,9 @@ var Typeahead = function (element, options) {
     self.highlighter = self.options.highlighter || self.highlighter
     self.updater = self.options.updater || self.updater
     self.menu = dom(self.options.menu);
-    dom(document.body).append(self.menu);
+    self.parent = dom(self.options.parent);
+
+    parent.append(self.menu);
 
     self.source = self.options.source;
     self.shown = false;
